@@ -1,0 +1,17 @@
+.section.legal-observers-bg {
+  position: relative;
+}
+.section.legal-observers-bg::before {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  inset: 0 0 0 0;
+  opacity: 0.1;
+  position: absolute;
+  z-index: 0;
+}
+
+.section.legal-observers-bg > * {
+  z-index: 1;
+}

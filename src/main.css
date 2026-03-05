@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #000000;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Anton', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: calc(1.2 * 1rem);
+  line-height: 1.5em;
+}
+
+.call-to-action {
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.community-patrol-bg::before {
+  background-image: url(/images/community-patrol.jpg);
+}
+
+.community-solidarity-bg::before {
+  background-image: url(/images/community-solidarity.jpg);
+}
+
+.ice-rapid-responders-bg::before {
+  background-image: url(/images/ice-rapid-responders.jpg);
+}
+
+.ice-watch-bg::before {
+  background-image: url(/images/ice-watch.jpg);
+}
+
+.legal-observers-bg::before {
+  background-image: url(/images/legal-observers.jpg);
+}
+
+.rapid-response-bg::before {
+  background-image: url(/images/rapid-response.jpg);
+}
+
+.header {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  display: flex;
+  height: 128px;
+  left: 0;
+  padding: 16px 32px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: background-color 0.325s ease-in-out;
+  z-index: 2;
+}
+
+.header.opaque {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.header .logo {
+  flex: 0 1;
+}
+
+.header .navigation {
+  align-items: center;
+  display: flex;
+  flex: 1 0;
+  font-size: calc(1.2 * 1rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
+  justify-content: center;
+}
+
+.header .navigation a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header .navigation ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .navigation > ol > li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.header .navigation > ol > li > ol {
+  background-color: #000000;
+  display: none;
+  list-style: none;
+  min-width: 200px;
+}
+
+.header .navigation > ol > li:hover > ol,
+.header .navigation > ol > li:focus > ol {
+  display: block;
+  list-style: none;
+  position: absolute;
+  top: calc(100% - 1px);
+}
+
+.header .navigation > ol > li > ol > li {
+  padding: 8px 16px;
+}
+
+.header .call-to-action {
+  background-color: #2266d3;
+  color: #ffffff;
+  flex: 0 1 184px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 96px 48px;
+}
+
+.section .call-to-action {
+  padding: 16px 48px;
+}
+
+.section.hero {
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: start;
+  padding: 256px 48px 128px 48px;
+  position: relative;
+}
+
+.section.hero::before {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  inset: 0 0 0 0;
+  opacity: 0.2;
+  position: absolute;
+  z-index: 0;
+}
+
+.section.hero > * {
+  width: 50%;
+  z-index: 1;
+}
+
+.section.hero h2 {
+  font-size: calc(6 * 1rem);
+  line-height: calc(1.3em * (1 + 5 / 25));
+  margin: 0 0 32px;
+}
+
+.section h3 {
+  font-size: 64px;
+  font-size: calc(4.1 * 1rem);
+  margin: 0 0 24px;
+}
+
+.section.primary-color {
+  background-color: #2266d3;
+  color: #ffffff;
+}
+
+.section.primary-color .call-to-action {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.call-to-action:hover {
+  opacity: 0.8;
+}
+
+.section.light-color {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.section.light-color .call-to-action {
+  background-color: #2266d3;
+  color: #ffffff;
+}
+
+.section.flex {
+  display: flex;
+}
+
+.section.flex > * {
+  flex: 1 1;
+}
+
+.section.flex.centered {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.section .center {
+  flex: unset;
+  text-align: center;
+  width: 50%;
+}
+
+.footer {
+  background: black;
+  color: white;
+  display: flex;
+  padding: 48px 32px;
+}
+
+.footer .title {
+  flex: 1 0;
+  text-transform: uppercase;
+}
+
+.footer .logo {
+  flex: 0 1;
+}
