@@ -204,6 +204,22 @@ p {
 .section.light-color {
   background-color: #ffffff;
   color: #000000;
+  position: relative;
+}
+
+.section.light-color::before {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  inset: 0 0 0 0;
+  opacity: 0.1;
+  position: absolute;
+  z-index: 0;
+}
+
+.section.light-color > * {
+  z-index: 1;
 }
 
 .section.light-color .call-to-action {
