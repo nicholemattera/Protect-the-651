@@ -19,7 +19,10 @@
     "prepare": "husky",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^20.4.3",
     "@commitlint/config-conventional": "^20.4.3",
