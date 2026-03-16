@@ -3,6 +3,13 @@
 @import 'tailwindcss';
 
 @theme {
+  --image-community-patrol: url(/images/community-patrol.jpg);
+  --image-community-solidarity: url(/images/community-solidarity.jpg);
+  --image-ice-rapid-responders: url(/images/ice-rapid-responders.jpg);
+  --image-ice-watch: url(/images/ice-watch.jpg);
+  --image-legal-observers: url(/images/legal-observers.jpg);
+  --image-rapid-response: url(/images/rapid-response.jpg);
+
   --color-lightest: #ffffff;
   --color-lightest-foreground: #000000;
   --color-light: #2266d3;
@@ -74,30 +81,6 @@ h6 {
 p {
   font-size: calc(1.2 * 1rem);
   line-height: 1.5em;
-}
-
-.community-patrol-bg::before {
-  background-image: url(/images/community-patrol.jpg);
-}
-
-.community-solidarity-bg::before {
-  background-image: url(/images/community-solidarity.jpg);
-}
-
-.ice-rapid-responders-bg::before {
-  background-image: url(/images/ice-rapid-responders.jpg);
-}
-
-.ice-watch-bg::before {
-  background-image: url(/images/ice-watch.jpg);
-}
-
-.legal-observers-bg::before {
-  background-image: url(/images/legal-observers.jpg);
-}
-
-.rapid-response-bg::before {
-  background-image: url(/images/rapid-response.jpg);
 }
 
 .section {
