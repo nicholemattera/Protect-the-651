@@ -20,6 +20,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/open-sans": "^5.2.7",
+    "@fontsource/anton": "^5.2.7",
     "@tailwindcss/vite": "^4.2.1",
     "tailwindcss": "^4.2.1"
   },
