@@ -40,30 +40,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  @apply font-body;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-heading;
-}
-
 * {
-  box-sizing: border-box;
+  @apply box-border;
 }
 
-html,
 body {
-  background-color: #000000;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
+  @apply bg-dark text-dark-foreground font-body text-sm p-0 m-0;
 }
 
 h1,
@@ -72,15 +54,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Anton', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  @apply font-heading font-normal tracking-wide uppercase;
 }
 
 p {
-  font-size: calc(1.2 * 1rem);
-  line-height: 1.5em;
+  @apply text-base/3;
 }
 
 .section {
@@ -169,20 +147,4 @@ p {
   flex: unset;
   text-align: center;
   width: 50%;
-}
-
-.footer {
-  background: black;
-  color: white;
-  display: flex;
-  padding: 48px 32px;
-}
-
-.footer .title {
-  flex: 1 0;
-  text-transform: uppercase;
-}
-
-.footer .logo {
-  flex: 0 1;
 }

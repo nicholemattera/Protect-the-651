@@ -1,12 +1,4 @@
 export class CallToActionElement extends HTMLAnchorElement {
-  _initialized: boolean
-
-  constructor() {
-    super()
-
-    this._initialized = false
-  }
-
   connectedCallback() {
     this.className = 'hover:opacity-80 inline-block px-3 py-2 rounded-sm font-bold text-base text-center uppercase'
 
