@@ -16,6 +16,8 @@
     "dev": "vite",
     "format": "oxfmt --check './**/*.{html,css,js,ts,yml,json,md}'",
     "format:fix": "oxfmt './**/*.{html,css,js,ts,yml,json,md}'",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "prepare": "husky",
     "preview": "vite preview"
   },
@@ -32,13 +34,15 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.3.3",
     "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0",
     "semantic-release": "^25.0.3",
     "typescript": "~5.9.3",
     "vite": "^7.3.1"
   },
   "private": true,
   "lint-staged": {
-    "./**/*.{html,css,js,ts,yml,json,md}": "oxfmt --no-error-on-unmatched-pattern"
+    "./**/*.{html,css,js,ts,yml,json,md}": "oxfmt --no-error-on-unmatched-pattern",
+    "./**/*.{js,jsx,ts,tsx,mjs,cjs}": "oxlint"
   },
   "release": {
     "branches": [
