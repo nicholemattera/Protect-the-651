@@ -12,13 +12,11 @@
     <ptsfo-header></ptsfo-header>
 
     <main class="main">
-      <div class="hero section before:bg-(image:--image-rapid-response)">
-        <div>
-          <h2>Get Engaged</h2>
-        </div>
-      </div>
+      <ptsfo-section background="rapid-response" variant="hero" theme="dark">
+        <h2>Get Engaged</h2>
+      </ptsfo-section>
 
-      <div class="primary-color section flex">
+      <ptsfo-section variant="split" theme="primary">
         <div>
           <h3>Join Signal Groups</h3>
         </div>
@@ -27,7 +25,7 @@
             Get out into your local community, meet your neighbors, and through grass root efforts join your
             neighborhood signal group. If you need help setting up Signal, check out our Signal Support page.
           </p>
-          <p>
+          <p class="mb-4">
             Read through the Neighborhood Networks document carefully. These chats are unvetted, so it's quite possible
             there are federal agents on them. Make sure not to use your name or initial as your nickname, and do not
             share sensitive information in these chats. Follow the directions in the group descriptions.
@@ -42,24 +40,22 @@
             >
           </p>
         </div>
-      </div>
+      </ptsfo-section>
 
-      <div class="light-color section flex centered before:bg-(image:--image-legal-observers)">
-        <div class="center">
-          <h3>Distribute Resources</h3>
-          <p>
-            Get friends and family together and have a zine folding party. You can find a few helpful zines and
-            resources throughout our pages. Once you have them check with local businesses and shops if they need any
-            resources. Little Free Libraries are a great place to distribute zines and whistles.
-          </p>
-          <p>
-            <a is="ptsfo-call-to-action" variant="light" href="/whistle-system.html">Whistle Resources</a>
-          </p>
-          <p>
-            <a is="ptsfo-call-to-action" variant="light" href="/immigrants-rights.html">Immigrants Rights</a>
-          </p>
-        </div>
-      </div>
+      <ptsfo-section background="legal-observers" variant="center" theme="light">
+        <h3>Distribute Resources</h3>
+        <p class="mb-4">
+          Get friends and family together and have a zine folding party. You can find a few helpful zines and resources
+          throughout our pages. Once you have them check with local businesses and shops if they need any resources.
+          Little Free Libraries are a great place to distribute zines and whistles.
+        </p>
+        <p>
+          <a is="ptsfo-call-to-action" variant="light" href="/whistle-system.html">Whistle Resources</a>
+        </p>
+        <p>
+          <a is="ptsfo-call-to-action" variant="light" href="/immigrants-rights.html">Immigrants Rights</a>
+        </p>
+      </ptsfo-section>
     </main>
 
     <ptsfo-footer></ptsfo-footer>

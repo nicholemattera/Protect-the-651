@@ -1,3 +1,6 @@
 import './components/CallToAction'
+import './components/ChevronDown'
+import './components/ChevronUp'
 import './components/Footer'
 import './components/Header'
+import './components/Section'

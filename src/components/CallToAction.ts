@@ -1,6 +1,7 @@
 export class CallToActionElement extends HTMLAnchorElement {
   connectedCallback() {
-    this.className = 'hover:opacity-80 inline-block px-3 py-2 rounded-sm font-bold text-base text-center uppercase'
+    this.className =
+      'hover:opacity-80 inline-block px-3 py-2 rounded-sm font-bold text-base text-center uppercase cursor-pointer'
 
     switch (this.getAttribute('variant')) {
       case 'lightest':

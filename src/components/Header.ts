@@ -1,5 +1,6 @@
 import './CallToAction'
-import type { CallToActionElement } from './CallToAction'
+import './ChevronDown'
+import './ChevronUp'
 
 class HeaderElement extends HTMLElement {
   _initialized = false
@@ -45,28 +46,32 @@ class HeaderElement extends HTMLElement {
 
     this.role = 'banner'
     this.className =
-      'flex items-center bg-transparent text-dark-foreground fixed top-0 inset-x-0 h-16 px-2 py-4 z-2 duration-300 ease-in-out'
+      'flex items-center bg-transparent text-dark-foreground fixed top-0 inset-x-0 px-6 py-3 z-2 transition-colors duration-300 ease-in-out'
     window.addEventListener('scroll', this._onWindowScroll)
 
     const logo = document.createElement('h1')
     logo.className = 'grow-0 shrink-1'
     this.appendChild(logo)
 
+    const logoAnchor = document.createElement('a')
+    logoAnchor.href = '/'
+    logo.appendChild(logoAnchor)
+
     const image = document.createElement('img')
     image.src = '/images/protect-the-651.png'
     image.width = 96
     image.height = 96
     image.alt = 'Protect the 651 - We keep us safe'
-    logo.appendChild(image)
+    logoAnchor.appendChild(image)
 
     const navigation = document.createElement('nav')
-    navigation.className = 'flex items-center grow-1 shrink-0 justify-center font-normal'
+    navigation.className = 'flex items-center grow-1 shrink-0 justify-center text-base/3'
     this.appendChild(navigation)
 
     const orderedList = document.createElement('ol')
     navigation.appendChild(orderedList)
 
-    const getEngagedCTA = document.createElement('a', { is: 'ptsfo-call-to-action' }) as CallToActionElement
+    const getEngagedCTA = document.createElement('a', { is: 'ptsfo-call-to-action' })
     getEngagedCTA.setAttribute('variant', 'light')
     getEngagedCTA.setAttribute('href', '/get-engaged.html')
     getEngagedCTA.innerText = 'Get Engaged'
@@ -74,10 +79,19 @@ class HeaderElement extends HTMLElement {
 
     HeaderElement.links.forEach((link) => {
       const listItem = document.createElement('li')
-      listItem.className = 'group/parent cursor-pointer relative inline-block px-1 py-2 text-lg/3 tracking-wide'
+      listItem.className = 'group/parent cursor-pointer relative inline-block px-1 py-2'
 
       if (link.children) {
         listItem.innerText = link.name
+        listItem.tabIndex = 0
+
+        const downChevron = document.createElement('ptsfo-chevron-down', { is: 'ptsfo-chevron-down' })
+        downChevron.className = 'inline-block group-hover/parent:hidden group-focus/parent:hidden w-2 ml-1'
+        listItem.appendChild(downChevron)
+
+        const upChevron = document.createElement('ptsfo-chevron-up', { is: 'ptsfo-chevron-up' })
+        upChevron.className = 'hidden group-hover/parent:inline-block group-focus/parent:inline-block w-2 ml-1'
+        listItem.appendChild(upChevron)
 
         const childOrderedList = document.createElement('ol')
         childOrderedList.className =
@@ -113,7 +127,7 @@ class HeaderElement extends HTMLElement {
   }
 
   _onWindowScroll() {
-    if (window.scrollY !== 0) {
+    if (window.scrollY > 64) {
       this.classList.add('bg-dark')
       this.classList.remove('bg-transparent')
     } else {

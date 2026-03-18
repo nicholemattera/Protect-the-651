@@ -3,13 +3,6 @@
 @import 'tailwindcss';
 
 @theme {
-  --image-community-patrol: url(/images/community-patrol.jpg);
-  --image-community-solidarity: url(/images/community-solidarity.jpg);
-  --image-ice-rapid-responders: url(/images/ice-rapid-responders.jpg);
-  --image-ice-watch: url(/images/ice-watch.jpg);
-  --image-legal-observers: url(/images/legal-observers.jpg);
-  --image-rapid-response: url(/images/rapid-response.jpg);
-
   --color-lightest: #ffffff;
   --color-lightest-foreground: #000000;
   --color-light: #2266d3;
@@ -40,111 +33,65 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  @apply box-border;
-}
+@layer components {
+  * {
+    @apply box-border;
+  }
 
-body {
-  @apply bg-dark text-dark-foreground font-body text-sm p-0 m-0;
-}
+  body {
+    @apply bg-dark text-dark-foreground font-body text-sm p-0 m-0;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-heading font-normal tracking-wide uppercase;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-normal tracking-wide uppercase;
+  }
 
-p {
-  @apply text-base/3;
-}
+  h2 {
+    @apply mb-4 text-7xl;
+  }
 
-.section {
-  padding: 96px 48px;
-}
+  h3 {
+    @apply mb-3 text-6xl;
+  }
 
-.section.hero {
-  align-items: center;
-  background-color: #000000;
-  color: #ffffff;
-  display: flex;
-  justify-content: start;
-  padding: 256px 48px 128px 48px;
-  position: relative;
-}
+  p {
+    @apply mb-2 text-base leading-3 tracking-wide;
+  }
 
-.section.hero::before {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  content: '';
-  inset: 0 0 0 0;
-  opacity: 0.2;
-  position: absolute;
-  z-index: 0;
-}
+  .community-patrol {
+    @apply before:bg-[url(/images/community-patrol.jpg)];
+  }
 
-.section.hero > * {
-  width: 50%;
-  z-index: 1;
-}
+  .community-solidarity {
+    @apply before:bg-[url(/images/community-solidarity.jpg)];
+  }
 
-.section.hero h2 {
-  font-size: calc(6 * 1rem);
-  line-height: calc(1.3em * (1 + 5 / 25));
-  margin: 0 0 32px;
-}
+  .ice-out {
+    @apply before:bg-[url(/images/ice-out.jpg)];
+  }
 
-.section h3 {
-  font-size: 64px;
-  font-size: calc(4.1 * 1rem);
-  margin: 0 0 24px;
-}
+  .ice-rapid-responders {
+    @apply before:bg-[url(/images/ice-rapid-responders.jpg)];
+  }
 
-.section.primary-color {
-  background-color: #2266d3;
-  color: #ffffff;
-}
+  .ice-watch {
+    @apply before:bg-[url(/images/ice-watch.jpg)];
+  }
 
-.section.light-color {
-  background-color: #ffffff;
-  color: #000000;
-  position: relative;
-}
+  .immigrants-are-welcome {
+    @apply before:bg-[url(/images/immigrants-are-welcome.jpg)];
+  }
 
-.section.light-color::before {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  content: '';
-  inset: 0 0 0 0;
-  opacity: 0.1;
-  position: absolute;
-  z-index: 0;
-}
+  .legal-observers {
+    @apply before:bg-[url(/images/legal-observers.jpg)];
+  }
 
-.section.light-color > * {
-  z-index: 1;
-}
-
-.section.flex {
-  display: flex;
-}
-
-.section.flex > * {
-  flex: 1 1;
-}
-
-.section.flex.centered {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.section .center {
-  flex: unset;
-  text-align: center;
-  width: 50%;
+  .rapid-response {
+    @apply before:bg-[url(/images/rapid-response.jpg)];
+  }
 }

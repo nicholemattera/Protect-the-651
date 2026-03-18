@@ -12,18 +12,16 @@
     <ptsfo-header></ptsfo-header>
 
     <main class="main">
-      <div class="hero section before:bg-(image:--image-community-solidarity)">
-        <div>
-          <h2>We keep us safe.</h2>
-          <p>
-            As federal agents descend upon our communities, people across Saint Paul and the east metro are living their
-            values and standing up for their immigrant neighbors. Working in solidarity with trusted local partners,
-            we'll PROTECT THE 651—together.
-          </p>
-        </div>
-      </div>
+      <ptsfo-section background="community-solidarity" variant="hero" theme="dark">
+        <h2>We keep us safe.</h2>
+        <p>
+          As federal agents descend upon our communities, people across Saint Paul and the east metro are living their
+          values and standing up for their immigrant neighbors. Working in solidarity with trusted local partners, we'll
+          PROTECT THE 651—together.
+        </p>
+      </ptsfo-section>
 
-      <div class="primary-color section flex">
+      <ptsfo-section variant="split" theme="primary">
         <div>
           <h3>Connect with a local group.</h3>
         </div>
@@ -33,21 +31,19 @@
             teams. Want to do your part?
           </p>
           <p>Sign up.</p>
-          <p>We protect your information with end-to-end encryption.</p>
+          <p class="mb-4">We protect your information with end-to-end encryption.</p>
           <p><a is="ptsfo-call-to-action" variant="lightest" href="/get-engaged.html">Get engaged</a></p>
         </div>
-      </div>
+      </ptsfo-section>
 
-      <div class="light-color section flex centered before:bg-(image:--image-legal-observers)">
-        <div class="center">
-          <h3>Who are we?</h3>
-          <p>
-            We're a network of trained legal observers, coordinating community patrols and responding to ICE activity
-            through peaceful, legal, non-violent action.
-          </p>
-          <p><a is="ptsfo-call-to-action" variant="light" href="/about.html">Learn more</a></p>
-        </div>
-      </div>
+      <ptsfo-section background="legal-observers" variant="center" theme="light">
+        <h3>Who are we?</h3>
+        <p class="mb-4">
+          We're a network of trained legal observers, coordinating community patrols and responding to ICE activity
+          through peaceful, legal, non-violent action.
+        </p>
+        <p><a is="ptsfo-call-to-action" variant="light" href="/about.html">Learn more</a></p>
+      </ptsfo-section>
     </main>
 
     <ptsfo-footer></ptsfo-footer>
