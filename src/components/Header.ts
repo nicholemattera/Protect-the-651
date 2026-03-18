@@ -22,8 +22,9 @@ class HeaderElement extends HTMLElement {
           url: '/signal-support.html',
         },
         {
-          name: 'Group Toolkits',
-          url: '/group-toolkits.html',
+          name: 'Business Guidance',
+          url: '/files/business-guidance.pdf',
+          target: '_blank',
         },
       ],
     },
@@ -103,6 +104,7 @@ class HeaderElement extends HTMLElement {
           const anchor = document.createElement('a')
           anchor.className = 'group-hover/child:underline'
           anchor.setAttribute('href', childLink.url)
+          anchor.setAttribute('target', childLink.target || '_self')
           anchor.innerText = childLink.name
           childListItem.appendChild(anchor)
 
