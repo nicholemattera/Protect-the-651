@@ -1,40 +1,30 @@
+import clsx from 'clsx'
+
 class SectionElement extends HTMLElement {
   get template() {
     const variant = this.getAttribute('variant') || 'center'
-
-    let theme = ''
-    if (this.getAttribute('theme') == 'dark') {
-      theme = 'bg-dark text-dark-foreground before:opacity-20'
-    } else if (this.getAttribute('theme') == 'primary') {
-      theme = 'bg-light text-light-foreground before:opacity-20'
-    } else if (this.getAttribute('theme') == 'light') {
-      theme = 'bg-lightest text-lightest-foreground before:opacity-10'
-    }
-
-    let className = ''
-    let content = ''
-    if (variant === 'hero') {
-      className = 'items-center justify-start pt-40 pb-30 px-12'
-      content = `
-      <div class="w-1/2 z-1">
-        ${this.innerHTML}
-      </div>
-      `
-    } else if (variant === 'split') {
-      className = 'px-12 py-20 *:grow-1 *:shrink-1 *:basis-1/2 *:z-1'
-      content = this.innerHTML
-    } else if (variant === 'center') {
-      className = 'items-center justify-center px-12 py-20'
-      content = `
-      <div class="text-center w-1/2 z-1">
-        ${this.innerHTML}
-      </div>
-      `
-    }
+    const background = this.getAttribute('background')
+    const theme = this.getAttribute('theme')
 
     return `
-    <div class="${this.getAttribute('background')} ${className} ${theme} relative flex z-1 before:absolute before:inset-0 before:z-0 before:bg-center before:bg-no-repeat before:bg-cover">
-      ${content}
+    <div class="${clsx(
+      `
+      relative z-1 flex
+      before:absolute before:inset-0 before:z-0 before:bg-cover before:bg-center
+      before:bg-no-repeat
+    `,
+      background,
+      {
+        'bg-dark text-dark-foreground before:opacity-20': theme === 'dark',
+        'bg-light text-light-foreground before:opacity-20': theme === 'primary',
+        'bg-lightest text-lightest-foreground before:opacity-10': theme === 'light',
+        'items-center justify-start px-12 pt-40 pb-30 *:z-1 *:w-1/2': variant === 'hero',
+        'px-12 py-20 *:z-1 *:shrink *:grow *:basis-1/2': variant === 'split',
+        'items-center justify-center px-12 py-20 *:z-1 *:w-1/2 *:text-center': variant === 'center',
+      },
+    )}">
+      ${variant === 'hero' || variant === 'center' ? `<div>${this.innerHTML}</div>` : ''}
+      ${variant === 'split' ? this.innerHTML : ''}
     </div>
     `
   }

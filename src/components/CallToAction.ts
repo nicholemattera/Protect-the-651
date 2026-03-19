@@ -1,21 +1,21 @@
+import clsx from 'clsx'
+
 export class CallToActionElement extends HTMLAnchorElement {
   connectedCallback() {
-    this.className =
-      'hover:opacity-80 inline-block px-3 py-2 rounded-sm font-bold text-base text-center uppercase cursor-pointer'
+    const variant = this.getAttribute('variant')
 
-    switch (this.getAttribute('variant')) {
-      case 'lightest':
-        this.className += ' bg-lightest text-lightest-foreground'
-        break
-
-      case 'light':
-        this.className += ' bg-light text-light-foreground'
-        break
-
-      case 'dark':
-        this.className += ' bg-dark text-dark-foreground'
-        break
-    }
+    this.className = clsx(
+      `
+        inline-block cursor-pointer rounded-sm px-3 py-2 text-center text-base
+        font-bold uppercase
+        hover:opacity-80
+      `,
+      {
+        'bg-lightest text-lightest-foreground': variant === 'lightest',
+        'bg-light text-light-foreground': variant === 'light',
+        'bg-dark text-dark-foreground': variant === 'dark,',
+      },
+    )
   }
 }
 
