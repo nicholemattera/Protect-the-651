@@ -9,10 +9,10 @@ class SectionElement extends HTMLElement {
     return `
     <div class="${clsx(
       `
-      relative z-1 flex
-      before:absolute before:inset-0 before:z-0 before:bg-cover before:bg-center
-      before:bg-no-repeat
-    `,
+        relative z-1 flex
+        before:absolute before:inset-0 before:z-0 before:bg-cover
+        before:bg-center before:bg-no-repeat
+      `,
       background,
       {
         'bg-dark text-dark-foreground before:opacity-20': theme === 'dark',
